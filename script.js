@@ -1,14 +1,14 @@
-const openModal = document.getElementById('openModal');
-const modal = document.getElementById('userModal');
-const closeModalBtn = document.getElementById('closeModalBtn');
-const cancelBtn = document.getElementById('cancelBtn');
+const openDisableModal = document.getElementById('openDisableModal');
+const disableModal = document.getElementById('disableModal');
+const closeDisableModal = document.getElementById('closeDisableModal');
+const cancelDisable = document.getElementById('cancelDisable');
 
-openModal.onclick = () => modal.style.display = 'block';
-closeModalBtn.onclick = () => modal.style.display = 'none';
-cancelBtn.onclick = () => modal.style.display = 'none';
+openDisableModal.onclick = () => disableModal.style.display = 'block';
+closeDisableModal.onclick = () => disableModal.style.display = 'none';
+cancelDisable.onclick = () => disableModal.style.display = 'none';
 
 window.onclick = (event) => {
-  if (event.target === modal) {
-    modal.style.display = 'none';
+  if (event.target === disableModal) {
+    disableModal.style.display = 'none';
   }
 };
