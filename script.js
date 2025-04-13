@@ -1,24 +1,18 @@
-const openModal = document.getElementById('openModal');
-const modal = document.getElementById('userModal');
-const closeModalBtn = document.getElementById('closeModalBtn');
-const cancelBtn = document.getElementById('cancelBtn');
-const togglePassword = document.getElementById('togglePassword');
-const passwordInput = document.getElementById('senha');
+// Scripts para abrir e fechar o modal
+const modal = document.getElementById("relatorioModal");
+const btn = document.getElementById("openModalBtn");
+const span = document.getElementsByClassName("close")[0];
 
-openModal.onclick = () => modal.style.display = 'block';
-closeModalBtn.onclick = () => modal.style.display = 'none';
-cancelBtn.onclick = () => modal.style.display = 'none';
+btn.onclick = function () {
+  modal.style.display = "block";
+}
 
-window.onclick = (event) => {
-  if (event.target === modal) {
-    modal.style.display = 'none';
+span.onclick = function () {
+  modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
-};
-
-togglePassword.addEventListener('click', () => {
-  if (passwordInput.type === 'password') {
-    passwordInput.type = 'text';
-  } else {
-    passwordInput.type = 'password';
-  }
-});
+}
