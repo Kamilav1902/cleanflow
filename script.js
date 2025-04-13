@@ -1,14 +1,24 @@
-const openDisableModal = document.getElementById('openDisableModal');
-const disableModal = document.getElementById('disableModal');
-const closeDisableModal = document.getElementById('closeDisableModal');
-const cancelDisable = document.getElementById('cancelDisable');
+const openModal = document.getElementById('openModal');
+const modal = document.getElementById('userModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const cancelBtn = document.getElementById('cancelBtn');
+const togglePassword = document.getElementById('togglePassword');
+const passwordInput = document.getElementById('senha');
 
-openDisableModal.onclick = () => disableModal.style.display = 'block';
-closeDisableModal.onclick = () => disableModal.style.display = 'none';
-cancelDisable.onclick = () => disableModal.style.display = 'none';
+openModal.onclick = () => modal.style.display = 'block';
+closeModalBtn.onclick = () => modal.style.display = 'none';
+cancelBtn.onclick = () => modal.style.display = 'none';
 
 window.onclick = (event) => {
-  if (event.target === disableModal) {
-    disableModal.style.display = 'none';
+  if (event.target === modal) {
+    modal.style.display = 'none';
   }
 };
+
+togglePassword.addEventListener('click', () => {
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+  } else {
+    passwordInput.type = 'password';
+  }
+});
