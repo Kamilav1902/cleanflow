@@ -1,73 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Relatório Diário</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro de Caminhões</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
+    <h1>Caminhões Cadastrados</h1>
+    <button id="btnNovoCaminhao">+ Novo Caminhão</button>
 
-  <!-- Botão para abrir o modal -->
-  <button id="openModalBtn" class="btn-cadastrar">+ Novo Relatório Diário</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Registro</th>
+          <th>Placa</th>
+          <th>Material</th>
+          <th>Tipo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaCaminhoes">
+        <!-- Linhas criadas dinamicamente -->
+      </tbody>
+    </table>
+  </div>
 
   <!-- Modal -->
-  <div id="relatorioModal" class="modal">
+  <div class="modal" id="modalCaminhao">
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Relatório Diário</h2>
+      <span class="close" id="fecharModal">&times;</span>
+      <h2>Cadastro de Caminhão</h2>
 
-      <label for="data">Data</label>
-      <input type="date" id="data" name="data">
+      <form id="formCaminhao">
+        <label>Nº de Registro</label>
+        <input type="text" id="registro" required/>
 
-      <label for="unidade">Unidade</label>
-      <select id="unidade" name="unidade">
-        <option value="">Selecione</option>
-        <option value="Unidade A">Unidade A</option>
-        <option value="Unidade B">Unidade B</option>
-      </select>
+        <label>Placa do Veículo</label>
+        <input type="text" id="placa" required/>
 
-      <label for="responsavel">Responsável</label>
-      <input type="text" id="responsavel" name="responsavel" placeholder="Nome do responsável">
+        <label>Material</label>
+        <input type="text" id="material" required/>
 
-      <h3>1. Resíduos Coletados</h3>
-      <label>Recicláveis (Kg)</label>
-      <input type="text">
-      <label>Orgânicos (Kg)</label>
-      <input type="text">
-      <label>Rejeitos (Kg)</label>
-      <input type="text">
-      <label>Total (Kg)</label>
-      <input type="text" readonly>
+        <label>Tipo</label>
+        <input type="text" id="tipo" required/>
 
-      <h3>2. Indicadores de Não Conformidade</h3>
-      <label>Não conformidades identificadas</label>
-      <input type="text" placeholder="Ex: descarte irregular">
-      <label>Reclamações</label>
-      <input type="text" placeholder="xxxxxxxxxxxxxxx">
-
-      <h3>3. Dados Ambientais</h3>
-      <label>Redução de consumo</label>
-      <input type="text" placeholder="xxxxxxxxxxxxxxx">
-      <label>Resíduos para o aterro</label>
-      <input type="text" placeholder="xxxxxxxxxxxxxxx">
-
-      <h3>4. Incidentes e Ocorrências</h3>
-      <label>Acidente de Trabalho</label>
-      <input type="text" placeholder="xxxxxxxxxxxxxxx">
-      <label>Problemas Operacionais</label>
-      <input type="text" placeholder="xxxxxxxxxxxxxxx">
-
-      <label>Observações</label>
-      <textarea rows="4" placeholder="xxxxxxxxxxxxxxx"></textarea>
-
-      <label>Anexar Documentos</label>
-      <input type="file">
-
-      <div class="button-row">
-        <button class="btn-limpar">Limpar</button>
-        <button class="btn-salvar">Salvar Rascunho</button>
-        <button class="btn-enviar">Enviar</button>
-      </div>
+        <div class="botoes">
+          <button type="button" class="cancelar" id="cancelar">Cancelar</button>
+          <button type="submit" class="salvar">Salvar</button>
+        </div>
+      </form>
     </div>
   </div>
 
